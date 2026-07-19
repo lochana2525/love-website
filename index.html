@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A heartfelt love letter and apology for Chooti Mnika ❤️ — a cinematic journey of love, memories, and forever promises.">
+    <meta name="theme-color" content="#FF4F81">
+    <title>Chooti Mnika ❤️ — My Heart, My Forever</title>
+
+    <!-- Google Fonts: Poppins, Great Vibes, Dancing Script -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         CURSOR GLOW
+    ============================================================ -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ============================================================
+         PARTICLE CANVAS
+    ============================================================ -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
+    <!-- ============================================================
+         FLOATING HEARTS OVERLAY
+    ============================================================ -->
+    <div class="hearts-overlay" id="heartsOverlay"></div>
+
+    <!-- ============================================================
+         LOADING SCREEN
+    ============================================================ -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-inner">
+            <div class="loading-heart-wrap">
+                <div class="loading-heart">❤️</div>
+                <div class="loading-ring r1"></div>
+                <div class="loading-ring r2"></div>
+            </div>
+            <p class="loading-title">Loading...</p>
+            <p class="loading-sub">Preparing something special for Chooti Mnika...</p>
+            <div class="loading-bar">
+                <div class="loading-bar-fill" id="loadingBarFill"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ============================================================
+         NAVBAR
+    ============================================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="logo-heart">❤️</span>
+                <span class="logo-text">Chooti Mnika</span>
+            </div>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#story" class="nav-link">Our Story</a></li>
+                <li><a href="#counter" class="nav-link">Together</a></li>
+                <li><a href="#forgive" class="nav-link">Forgive Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <!-- Cinematic background: outdoor lake photo -->
+        <div class="hero-bg" style="background-image: url('images/photo5.jpg');"></div>
+        <div class="hero-overlay"></div>
+
+        <!-- Soft bokeh blobs -->
+        <div class="bokeh-wrap">
+            <div class="bokeh bk1"></div>
+            <div class="bokeh bk2"></div>
+            <div class="bokeh bk3"></div>
+            <div class="bokeh bk4"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-sparkle-line">✨ ✨ ✨</div>
+            <h1 class="hero-name anim-fadeup">Chooti Mnika ❤️</h1>
+            <h2 class="hero-sorry anim-fadeup" style="--delay:0.35s">I'm Truly Sorry...</h2>
+            <h3 class="hero-forever anim-fadeup" style="--delay:0.65s">I Love You Forever</h3>
+            <p class="hero-quote anim-fadeup" style="--delay:0.95s">
+                "You are my today,<br>
+                my tomorrow,<br>
+                and every beautiful tomorrow after that."
+            </p>
+            <button class="glow-btn hero-cta anim-fadeup" id="openHeartBtn" style="--delay:1.25s">
+                <span class="btn-heart-ic">❤️</span>
+                Open My Heart
+            </button>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll-hint">
+            <div class="scroll-bar"></div>
+            <span class="scroll-label">Scroll</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PHOTO GALLERY
+    ============================================================ -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <span class="section-tag">✨ Our Moments</span>
+            <h2 class="section-title">Our Beautiful Memories</h2>
+            <p class="section-sub">Every photograph holds a universe of love ❤️</p>
+        </div>
+
+        <!-- Masonry grid — 5 couple photos -->
+        <div class="masonry-grid" id="masonryGrid">
+            <div class="masonry-item" data-index="0" data-caption="Our Promise ❤️">
+                <div class="masonry-inner">
+                    <img src="images/photo1.jpg" alt="Our hands together — a beautiful promise ❤️" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="mo-heart">❤️</span>
+                        <span class="mo-label">Our Promise</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item" data-index="1" data-caption="Pure Love ❤️">
+                <div class="masonry-inner">
+                    <img src="images/photo2.jpg" alt="Together in white — pure love ❤️" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="mo-heart">❤️</span>
+                        <span class="mo-label">Pure Love</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item" data-index="2" data-caption="My Everything ❤️">
+                <div class="masonry-inner">
+                    <img src="images/photo3.jpg" alt="Close together — you are my everything ❤️" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="mo-heart">❤️</span>
+                        <span class="mo-label">My Everything</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item" data-index="3" data-caption="Forever Smiles ❤️">
+                <div class="masonry-inner">
+                    <img src="images/photo4.jpg" alt="Smiling together — forever smiles ❤️" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="mo-heart">❤️</span>
+                        <span class="mo-label">Forever Smiles</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item" data-index="4" data-caption="Our Adventure ❤️">
+                <div class="masonry-inner">
+                    <img src="images/photo5.jpg" alt="Our adventure by the beautiful lake ❤️" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="mo-heart">❤️</span>
+                        <span class="mo-label">Our Adventure</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item" data-index="5" data-caption="The Day Everything Changed ❤️">
+                <div class="masonry-inner">
+                    <img src="images/photo6.jpg" alt="The day everything changed ❤️" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span class="mo-heart">❤️</span>
+                        <span class="mo-label">When It All Began</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         OUR STORY — APOLOGY LETTER
+    ============================================================ -->
+    <section class="story-section" id="story">
+        <div class="section-header">
+            <span class="section-tag">💌 From My Heart</span>
+            <h2 class="section-title">Our Story ❤️</h2>
+        </div>
+        <div class="story-card glass-card">
+            <div class="story-deco-top">✨ 💌 ✨</div>
+            <div class="story-body">
+                <!-- Text injected by typewriter in script.js -->
+                <div class="story-text" id="storyText"></div>
+            </div>
+            <div class="story-deco-bot">❤️ ❤️ ❤️</div>
+            <div class="story-sig">
+                <span class="sig-label">Always &amp; Forever Yours</span>
+                <span class="sig-heart">❤️</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY I LOVE YOU
+    ============================================================ -->
+    <section class="love-section" id="love">
+        <div class="section-header">
+            <span class="section-tag">💕 Every Single Reason</span>
+            <h2 class="section-title">Why I Love You</h2>
+            <p class="section-sub">There are infinite reasons, but here are just a few that take my breath away...</p>
+        </div>
+        <div class="love-grid">
+            <div class="love-card glass-card scroll-reveal" style="--delay:0s">
+                <div class="love-glow"></div>
+                <div class="love-emoji">😊</div>
+                <h3 class="love-card-title">❤️ Your Smile</h3>
+                <p class="love-card-text">Your smile is the most radiant thing in this universe. It outshines every star and fills every dark corner of my heart with pure warmth and light.</p>
+            </div>
+            <div class="love-card glass-card scroll-reveal" style="--delay:0.12s">
+                <div class="love-glow"></div>
+                <div class="love-emoji">✨</div>
+                <h3 class="love-card-title">❤️ Your Eyes</h3>
+                <p class="love-card-text">In your eyes, I found my home. They hold entire universes of warmth, and I could lose myself in them for a lifetime and never want to be found.</p>
+            </div>
+            <div class="love-card glass-card scroll-reveal" style="--delay:0.24s">
+                <div class="love-glow"></div>
+                <div class="love-emoji">💖</div>
+                <h3 class="love-card-title">❤️ Your Kind Heart</h3>
+                <p class="love-card-text">Your heart is the most beautiful thing I've ever known. Your kindness, your compassion — they touch everyone around you and make this world more beautiful.</p>
+            </div>
+            <div class="love-card glass-card scroll-reveal" style="--delay:0.36s">
+                <div class="love-glow"></div>
+                <div class="love-emoji">😂</div>
+                <h3 class="love-card-title">❤️ Your Cute Laugh</h3>
+                <p class="love-card-text">Your laugh is my favorite melody. It's the sound that makes every difficult day instantly worthwhile and every quiet moment feel like magic.</p>
+            </div>
+            <div class="love-card glass-card scroll-reveal" style="--delay:0.48s">
+                <div class="love-glow"></div>
+                <div class="love-emoji">🌟</div>
+                <h3 class="love-card-title">❤️ Every Memory With You</h3>
+                <p class="love-card-text">Every moment we've shared is a treasure I hold close to my heart. You make every ordinary day feel like a beautiful, extraordinary adventure.</p>
+            </div>
+            <div class="love-card glass-card scroll-reveal" style="--delay:0.6s">
+                <div class="love-glow"></div>
+                <div class="love-emoji">❤️</div>
+                <h3 class="love-card-title">❤️ Your Love</h3>
+                <p class="love-card-text">Your love is the greatest gift life has ever given me. It has transformed me, healed me, and shown me what it truly means to be alive and cherished.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MEMORIES TIMELINE
+    ============================================================ -->
+    <section class="memories-section" id="memories">
+        <div class="section-header">
+            <span class="section-tag">✨ Our Journey Together</span>
+            <h2 class="section-title">Our Beautiful Memories</h2>
+        </div>
+        <div class="timeline" id="timeline">
+            <div class="tl-center-line"></div>
+
+            <!-- Memory 1 — LEFT -->
+            <div class="tl-item tl-left scroll-reveal">
+                <div class="tl-card glass-card">
+                    <div class="tl-img-wrap pos-tall">
+                        <img src="images/photo_first_dm.jpg" alt="Our very first DM — where it all began ❤️" loading="lazy">
+                    </div>
+                    <div class="tl-text">
+                        <h3>❤️ The Day Everything Changed</h3>
+                        <p>A simple "Hy" — and everything changed forever. That one message was the beginning of the most beautiful chapter of my life. 💕</p>
+                    </div>
+                </div>
+                <div class="tl-dot-wrap">
+                    <div class="tl-dot">❤️</div>
+                </div>
+                <div class="tl-spacer"></div>
+            </div>
+
+            <!-- Memory 2 — RIGHT -->
+            <div class="tl-item tl-right scroll-reveal">
+                <div class="tl-spacer"></div>
+                <div class="tl-dot-wrap">
+                    <div class="tl-dot">✨</div>
+                </div>
+                <div class="tl-card glass-card">
+                    <div class="tl-img-wrap pos-top">
+                        <img src="images/photo_adventure.jpg" alt="Our first adventure together ❤️" loading="lazy">
+                    </div>
+                    <div class="tl-text">
+                        <h3>✨ Our First Adventure</h3>
+                        <p>Every outing with you is a magical journey. Your laughter fills every quiet corner with joy and turns any ordinary place into our favorite spot.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory 3 — LEFT -->
+            <div class="tl-item tl-left scroll-reveal">
+                <div class="tl-card glass-card">
+                    <div class="tl-img-wrap pos-bottom">
+                        <img src="images/photo3.jpg" alt="Closer together" loading="lazy">
+                    </div>
+                    <div class="tl-text">
+                        <h3>💕 Closer Together</h3>
+                        <p>In your arms I found my greatest peace. You are my safe haven, my sanctuary — the place where I feel most at home in this entire world.</p>
+                    </div>
+                </div>
+                <div class="tl-dot-wrap">
+                    <div class="tl-dot">💕</div>
+                </div>
+                <div class="tl-spacer"></div>
+            </div>
+
+            <!-- Memory 4 — RIGHT -->
+            <div class="tl-item tl-right scroll-reveal">
+                <div class="tl-spacer"></div>
+                <div class="tl-dot-wrap">
+                    <div class="tl-dot">🌊</div>
+                </div>
+                <div class="tl-card glass-card">
+                    <div class="tl-img-wrap pos-bottom">
+                        <img src="images/photo5.jpg" alt="Under open skies" loading="lazy">
+                    </div>
+                    <div class="tl-text">
+                        <h3>🌊 Under Open Skies</h3>
+                        <p>Standing beside you beneath the vast sky, I realized — every place becomes paradise when you are by my side.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory 5 — LEFT -->
+            <div class="tl-item tl-left scroll-reveal">
+                <div class="tl-card glass-card">
+                    <div class="tl-img-wrap pos-top">
+                        <img src="images/photo1.jpg" alt="Our forever promise" loading="lazy">
+                    </div>
+                    <div class="tl-text">
+                        <h3>💍 Our Forever Promise</h3>
+                        <p>This ring, this moment, this promise — my heart will always be yours. Through every storm, every season, I will always find my way back to you.</p>
+                    </div>
+                </div>
+                <div class="tl-dot-wrap">
+                    <div class="tl-dot">💍</div>
+                </div>
+                <div class="tl-spacer"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         LOVE COUNTER
+    ============================================================ -->
+    <section class="counter-section" id="counter">
+        <div class="counter-bg-hearts" id="counterBgHearts"></div>
+        <div class="section-header">
+            <span class="section-tag">⏳ Every Second Counts</span>
+            <h2 class="section-title">We Have Been Together ❤️</h2>
+        </div>
+        <div class="counter-grid">
+            <div class="counter-card glass-card">
+                <div class="counter-val" id="cYears">00</div>
+                <div class="counter-unit">Years</div>
+                <div class="counter-ico">💫</div>
+            </div>
+            <div class="counter-card glass-card">
+                <div class="counter-val" id="cMonths">00</div>
+                <div class="counter-unit">Months</div>
+                <div class="counter-ico">🌸</div>
+            </div>
+            <div class="counter-card glass-card">
+                <div class="counter-val" id="cDays">00</div>
+                <div class="counter-unit">Days</div>
+                <div class="counter-ico">✨</div>
+            </div>
+            <div class="counter-card glass-card">
+                <div class="counter-val" id="cHours">00</div>
+                <div class="counter-unit">Hours</div>
+                <div class="counter-ico">⭐</div>
+            </div>
+            <div class="counter-card glass-card">
+                <div class="counter-val" id="cMinutes">00</div>
+                <div class="counter-unit">Minutes</div>
+                <div class="counter-ico">💕</div>
+            </div>
+            <div class="counter-card glass-card">
+                <div class="counter-val" id="cSeconds">00</div>
+                <div class="counter-unit">Seconds</div>
+                <div class="counter-ico">❤️</div>
+            </div>
+        </div>
+        <p class="counter-caption">...counting every precious second of loving you ❤️</p>
+    </section>
+
+    <!-- ============================================================
+         LOVE QUOTES
+    ============================================================ -->
+    <section class="quotes-section" id="quotes">
+        <div class="quote-card glass-card">
+            <div class="quote-mark open">"</div>
+            <p class="quote-text" id="quoteText">You are my forever.</p>
+            <div class="quote-mark close">"</div>
+            <span class="quote-heart">❤️</span>
+        </div>
+        <div class="quote-dots" id="quoteDots">
+            <button class="q-dot active" data-idx="0" aria-label="Quote 1"></button>
+            <button class="q-dot" data-idx="1" aria-label="Quote 2"></button>
+            <button class="q-dot" data-idx="2" aria-label="Quote 3"></button>
+            <button class="q-dot" data-idx="3" aria-label="Quote 4"></button>
+            <button class="q-dot" data-idx="4" aria-label="Quote 5"></button>
+            <button class="q-dot" data-idx="5" aria-label="Quote 6"></button>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FORGIVE ME SECTION
+    ============================================================ -->
+    <section class="forgive-section" id="forgive">
+        <div class="section-header">
+            <span class="section-tag">💌 My Heart Speaks</span>
+            <h2 class="section-title">Will You Forgive Me?</h2>
+            <p class="section-sub">I know I hurt you, and for that I am deeply sorry. You are irreplaceable, and I promise to be the person you deserve — every single day.</p>
+        </div>
+        <div class="forgive-center">
+            <div class="forgive-heart-wrap">
+                <div class="pulse-ring pr1"></div>
+                <div class="pulse-ring pr2"></div>
+                <div class="pulse-ring pr3"></div>
+                <div class="big-heart" id="bigHeart">❤️</div>
+            </div>
+            <button class="glow-btn forgive-btn" id="forgiveBtn">
+                ❤️ Yes, I Forgive You ❤️
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FORGIVE POPUP
+    ============================================================ -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="forgive-popup" id="forgivePopup">
+        <div class="popup-inner glass-card">
+            <div class="popup-hearts-row">❤️ 💕 ❤️</div>
+            <h2 class="popup-title">Thank You Chooti Mnika ❤️</h2>
+            <p class="popup-msg">I Promise To Never Stop Loving You.</p>
+            <p class="popup-sub">You are, and will always be, the greatest love of my life. 💕</p>
+            <button class="popup-close-btn" id="popupClose">Close With Love ❤️</button>
+        </div>
+    </div>
+
+    <!-- Confetti + Heart Explosion Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- ============================================================
+         FINAL SECTION
+    ============================================================ -->
+    <section class="final-section" id="final">
+        <!-- Most beautiful couple photo as background -->
+        <div class="final-bg" style="background-image: url('images/photo2.jpg');"></div>
+        <div class="final-overlay"></div>
+        <div class="final-hearts-rain" id="finalHeartsRain"></div>
+        <div class="final-content">
+            <h2 class="final-title">I Love You Forever ❤️</h2>
+            <div class="final-name">Chooti Mnika</div>
+            <p class="final-promise">
+                No matter where life takes us,<br>
+                no matter what storms we face together,<br>
+                I will always find my way back to you.<br>
+                You are my home. ❤️
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="footer-hearts">❤️ 💕 ❤️</div>
+        <p class="footer-made">Made With All My Love ❤️</p>
+        <p class="footer-forever">Forever Yours</p>
+        <p class="footer-copy">© 2024 — With Every Beat Of My Heart</p>
+    </footer>
+
+    <!-- ============================================================
+         LIGHTBOX
+    ============================================================ -->
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+        <button class="lb-btn lb-close" id="lbClose" aria-label="Close lightbox">✕</button>
+        <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+        <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo">›</button>
+        <div class="lb-img-wrap">
+            <img class="lb-img" id="lbImg" src="" alt="">
+        </div>
+        <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
